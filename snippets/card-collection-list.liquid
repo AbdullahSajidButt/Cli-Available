@@ -1,0 +1,139 @@
+{% comment %}
+  Renders a collection card
+
+  Accepts:
+  - card_collection: {Object} Collection Liquid object
+  - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+  - columns: {Number}
+  - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
+  - wrapper_class: {String} Wrapper class for card (optional)
+
+  Usage:
+  {% render 'card-collection' %}
+{% endcomment %}
+
+{%- liquid
+  assign ratio = 1
+  if card_collection_icon and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif card_collection_icon and media_aspect_ratio == 'adapt'
+    assign ratio = card_collection_icon.aspect_ratio
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+  assign card_color_scheme = settings.card_color_scheme
+  if wrapper_class == null or wrapper_class == 'none'
+    assign card_color_scheme = settings.collection_card_color_scheme
+  endif
+-%}
+
+<div
+  class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}"
+  style="background-color: {{ background_color }};"
+>
+  <div
+    class="
+      card card-collection-list
+      card--standard
+      {% if card_collection_icon %} card--media{% else %} card--text{% endif %}
+      {% if extend_height %} card--extend-height{% endif %}
+    "
+    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+  >
+    <div
+      class="card__inner color-{{ card_color_scheme }} gradient ratio"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      {%- if card_collection_icon -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect collection_icon">
+             <a
+            {% if card_collection == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ card_collection.url }}"
+            {% endif %}
+            class="full-unstyled-link"
+          >
+            <img
+              src="{{ card_collection_icon | image_url: width: card_collection_icon.width }}"
+              alt=""
+              height="{{ card_collection_icon.height }}"
+              width="{{ card_collection_icon.width }}"
+              loading="lazy"
+              class="motion-reduce"
+            >
+            </a>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            {{ 'collection-1' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="card__content">
+      <div class="card__information">
+        <h3 class="card__heading">
+          <a
+            {% if card_collection == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ card_collection.url }}"
+            {% endif %}
+            class="full-unstyled-link"
+          >
+            {%- if card_collection.title != blank -%}
+              {{- card_collection.title | escape -}}
+              {% comment %}
+                <span
+                  >(
+                  {{- card_collection.all_products_count }})</span
+                >
+              {% endcomment %}
+            {%- else -%}
+              {{ 'onboarding.collection_title' | t }}
+            {%- endif -%}
+          </a>
+        </h3>
+        <div class="grid__item collection-box link-list">
+          <ul class="site-collection__linklist collection-content">
+            {%- for link in card_collection_links.links -%}
+              <li class="site-collection__linklist-item">
+                <a
+                  href="{{ link.url }}"
+                  class="{% if link.active %} list-menu__item--active{% endif %}"
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        {%- if card_collection.description != blank -%}
+          <div class="card__caption">
+            {{ card_collection.description }}
+          </div>
+        {%- endif -%}
+        <div class="counter">
+          <span class="counter-text">
+            {{- card_collection.all_products_count }}
+            {{ 'sections.collection-list.count_title' | t -}}
+          </span>
+          <a
+            {% if card_collection == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ card_collection.url }}"
+            {% endif %}
+          >
+            {{- 'sections.collection_list.view_all' | t -}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

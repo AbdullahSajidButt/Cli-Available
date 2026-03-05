@@ -1,0 +1,206 @@
+{% comment %}
+Category Slider (arrows only, exact visible count, SQUARE image boxes)
+{% endcomment %}
+
+<section id="cs-category-slider-{{ section.id }}" class="cs-category-slider">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2 class="cs-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="cs-viewport">
+      {% if section.settings.show_arrows %}
+        <button class="cs-arrow cs-arrow--prev" type="button" aria-label="Previous" disabled>‹</button>
+      {% endif %}
+
+      <ul class="cs-track" role="list">
+        {% for block in section.blocks %}
+          <li class="cs-card" {{ block.shopify_attributes }}>
+            {% assign href = block.settings.link %}
+            {% if href != blank %}<a href="{{ href }}" class="cs-link">{% endif %}
+              <div class="cs-image-wrap">
+                {% if block.settings.image %}
+                  <img
+                    class="cs-image"
+                    src="{{ block.settings.image | image_url: width: 720 }}"
+                    srcset="
+                      {{ block.settings.image | image_url: width: 360 }} 360w,
+                      {{ block.settings.image | image_url: width: 540 }} 540w,
+                      {{ block.settings.image | image_url: width: 720 }} 720w,
+                      {{ block.settings.image | image_url: width: 960 }} 960w
+                    "
+                    sizes="(max-width: 768px) 90vw, 22vw"
+                    alt="{{ block.settings.alt | default: block.settings.title | escape }}"
+                    loading="lazy" decoding="async">
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
+              <div class="cs-title">{{ block.settings.title }}</div>
+            {% if href != blank %}</a>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if section.settings.show_arrows %}
+        <button class="cs-arrow cs-arrow--next" type="button" aria-label="Next">›</button>
+      {% endif %}
+    </div>
+  </div>
+
+  <style>
+    /* ===== Variables ===== */
+    #cs-category-slider-{{ section.id }}{
+      --gap: 24px;
+      --cards-desktop: {{ section.settings.cards_per_row | default: 4 }};
+      --cards-mobile:  {{ section.settings.cards_per_row_mobile | default: 1 }};
+      --radius: 12px;
+      --shadow: 0 6px 20px rgba(0,0,0,.06);
+      --border: 1px solid #e5e5e5;
+    }
+
+    .cs-heading{
+      font-size: clamp(24px, 3vw, 26px);
+      font-weight: 700;
+      margin: 0 0 16px;
+    }
+
+    .cs-viewport{ position: relative; overflow: hidden; }
+
+    /* Grid track enforces exact visible count; no scrollbar */
+    .cs-track{
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - var(--gap) * (var(--cards-desktop) - 1)) / var(--cards-desktop));
+      gap: var(--gap);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      transform: translateX(0);
+      transition: transform .35s ease;
+      will-change: transform;
+      touch-action: none;
+      box-sizing: border-box;
+    }
+
+    .cs-card{ min-width: 0; text-align: center; }
+
+    .cs-link{ display:block; color:inherit; text-decoration:none; }
+
+    /* ===== SQUARE image box ===== */
+    .cs-image-wrap{
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;                /* <-- perfect square */
+      border: var(--border);
+      {% comment %} border-radius: var(--radius); {% endcomment %}
+      background:#fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;                    /* hide overflow within rounded corners */
+      display:grid;
+      place-items:center;
+      padding: 10px;                       /* small inner gutter so images don’t touch edges */
+    }
+
+    /* Image fits INSIDE the square without cropping */
+    .cs-image{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;                 /* keep full image visible */
+      object-position: center;
+      display: block;
+    }
+
+    .cs-title{
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .cs-arrow{
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 999px;
+      background:#fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.15);
+      cursor:pointer;
+      z-index:2;
+    }
+    .cs-arrow--prev{ left:-12px; }
+    .cs-arrow--next{ right:-12px; }
+    .cs-arrow[disabled]{ opacity:.35; cursor:not-allowed; }
+
+    @media (max-width: 768px){
+      .cs-track{
+        grid-auto-columns: calc((100% - var(--gap) * (var(--cards-mobile) - 1)) / var(--cards-mobile));
+      }
+    }
+  </style>
+
+  <script>
+    (() => {
+      const root = document.getElementById('cs-category-slider-{{ section.id }}');
+      const viewport = root.querySelector('.cs-viewport');
+      const track = root.querySelector('.cs-track');
+      const prev = root.querySelector('.cs-arrow--prev');
+      const next = root.querySelector('.cs-arrow--next');
+
+      const perViewDesktop = {{ section.settings.cards_per_row | default: 4 }};
+      const perViewMobile  = {{ section.settings.cards_per_row_mobile | default: 1 }};
+      const isMobile = () => window.matchMedia('(max-width:768px)').matches;
+      const perView = () => isMobile() ? Math.max(1, perViewMobile) : Math.max(4, perViewDesktop);
+      const total = () => track.children.length;
+      const pages = () => Math.max(1, Math.ceil(total() / perView()));
+
+      let page = 0;
+
+      function apply(){
+        const step = viewport.clientWidth;     // move one full viewport
+        track.style.transform = `translateX(${-page * step}px)`;
+        if (prev) prev.disabled = page <= 0;
+        if (next) next.disabled = page >= pages() - 1;
+      }
+
+      function go(dir){
+        page = Math.min(Math.max(0, page + dir), pages() - 1);
+        apply();
+      }
+
+      if (prev) prev.addEventListener('click', () => go(-1));
+      if (next) next.addEventListener('click', () => go( 1));
+      window.addEventListener('resize', () => { page = Math.min(page, pages() - 1); apply(); });
+
+      apply();
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Category slider",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Shop by Category" },
+    { "type": "checkbox", "id": "show_arrows", "label": "Show arrows", "default": true },
+    { "type": "range", "id": "cards_per_row", "min": 4, "max": 8, "step": 1, "label": "Cards visible on desktop", "default": 4 },
+    { "type": "range", "id": "cards_per_row_mobile", "min": 1, "max": 3, "step": 1, "label": "Cards visible on mobile", "default": 1 }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Category" },
+        { "type": "text", "id": "alt", "label": "Image alt text" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [{ "name": "Category slider", "category": "Custom" }]
+}
+{% endschema %}

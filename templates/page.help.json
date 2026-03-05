@@ -1,0 +1,78 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_6JX96P": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Ua8gmh": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "heading_size": "h2"
+          }
+        },
+        "text_66tUNw": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>DirectSuppliesUK</strong> is your trusted source for quality building materials and construction supplies across the UK. We offer a wide range of products, competitive pricing, and reliable delivery to support builders, contractors, and DIY enthusiasts.</p><p><strong>DirectSuppliesUK</strong> is a trading name of <strong>BIAAS TECH LTD</strong>, a company registered in England and Wales under <strong>Company Number 16716662</strong>.</p>",
+            "scrolling_text": false
+          }
+        },
+        "button_jWJNiV": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Woodland258",
+            "button_link": "",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "text_F3wdni": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>DirectSuppliesUK</strong> is your trusted source for quality building materials and construction supplies across the UK. We offer a wide range of products, competitive pricing, and reliable delivery to support builders, contractors, and DIY enthusiasts.</p><p><strong>DirectSuppliesUK</strong> is a trading name of <strong>BIAAS TECH LTD</strong>, a company registered in England and Wales under <strong>Company Number 16716662</strong>.</p>",
+            "scrolling_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ua8gmh",
+        "text_66tUNw",
+        "button_jWJNiV",
+        "text_F3wdni"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "content_alignment": "center",
+        "color_scheme": "accent-3",
+        "full_width": true,
+        "padding_top": 22,
+        "padding_bottom": 50,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "rich_text_6JX96P",
+    "main"
+  ]
+}

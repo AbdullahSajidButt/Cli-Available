@@ -1,0 +1,348 @@
+{% comment %}
+  Collection Description Banner (3-line clamp with Read More / Read Less)
+  - Shows first N lines of collection.description (default: 3)
+  - Toggles to reveal the full description
+  - Works even if description contains HTML (basic tags)
+  - Scoped by section id to avoid collisions
+{% endcomment %}
+
+{% if request.page_type == 'collection' %}
+<div class="container" id="collection-desc-{{ section.id }}" class="cdb cdb--{{ section.id }}" style="--cdb-max-lines: {{ section.settings.max_lines | default: 4 }};">
+  <div class=" container cdb__inner {% if section.settings.full_width == false %} page-width{% endif %}">
+    {% if section.settings.show_heading %}
+      <h2 class="cdb__heading">
+        {{ section.settings.custom_heading | default: collection.title | escape }}
+      </h2>
+    {% endif %}
+
+    {% if collection.description != blank %}
+      <div class="cdb__desc-wrap">
+        <div class="cdb__desc cdb__desc--clamped" aria-expanded="false">
+          {{ collection.description }}
+        </div>
+
+        {% if section.settings.show_fade %}
+          <div class="cdb__fade"></div>
+        {% endif %}
+
+        {% if section.settings.show_toggle %}
+          <button
+            class="btn--primary cdb__toggle"
+            type="button"
+            aria-controls="cdb-desc-{{ section.id }}"
+            aria-expanded="false"
+            data-cdb-toggle
+          >
+            <span data-cdb-more>{{ section.settings.read_more_label | default: 'Read more' }}</span>
+            <span data-cdb-less hidden>{{ section.settings.read_less_label | default: 'Read less' }}</span>
+          </button>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <style>
+    .section{
+    margin:0px  0px 15px 0px!important;
+  }
+    /* --- Collection Description Banner (scoped) --- */
+    #collection-desc-{{ section.id }} {
+      --cdb-max-lines: {{ section.settings.max_lines | default: 3 }};
+      --cdb-bg: {{ section.settings.bg_color }};
+      --cdb-text: {{ section.settings.text_color }};
+      --cdb-fade-height: 64px;
+      --cdb-radius: {{ section.settings.corner_radius }}px;
+      --cdb-pad-y: {{ section.settings.padding_y }}px;
+      --cdb-pad-x: {{ section.settings.padding_x }}px;
+      background: var(--cdb-bg);
+      color: var(--cdb-text);
+      border-radius: var(--cdb-radius);
+      padding: var(--cdb-pad_y, var(--cdb-pad-y)) var(--cdb-pad_x, var(--cdb-pad-x));
+      {% if section.settings.border %}
+      border: 1px solid color-mix(in oklab, var(--cdb-text) 12%, transparent);
+      {% endif %}
+    }
+    #collection-desc-{{ section.id }} .cdb__inner {
+      display: block;
+    }
+
+    #collection-desc-{{ section.id }} .cdb__heading {
+      margin: 0 0 0.6rem;
+      line-height: 1.2;
+      text-align: {{ section.settings.heading_align }};
+      font-size: clamp(18px, 2.2vw, 28px);
+      font-weight: 600;
+    }
+
+    #collection-desc-{{ section.id }} .cdb__desc-wrap {
+      position: relative;
+    }
+
+    #collection-desc-{{ section.id }} .cdb__desc {
+      margin: 0;
+      line-height: 1.6;
+      {% if section.settings.text_align != 'inherit' %}
+      text-align: {{ section.settings.text_align }};
+      {% endif %}
+      /* Allow basic rich text from collection.description */
+    }
+
+    /* Line clamp */
+    #collection-desc-{{ section.id }} .cdb__desc--clamped {
+      display: -webkit-box;
+      -webkit-line-clamp: var(--cdb-max-lines);
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Fade overlay (optional) */
+    #collection-desc-{{ section.id }} .cdb__fade {
+      pointer-events: none;
+      position: absolute;
+      left: 0; right: 0; bottom: 2.4rem; /* sit above the button gap */
+      height: var(--cdb-fade-height);
+      background: linear-gradient(to bottom, color-mix(in oklab, var(--cdb-bg) 0%, transparent) 0%, var(--cdb-bg) 60%);
+      display: none;
+    }
+
+    #collection-desc-{{ section.id }} .cdb__desc--clamped ~ .cdb__fade {
+      display: block;
+    }
+
+    #collection-desc-{{ section.id }} .cdb__toggle {
+      margin-top: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .6rem 1rem;
+      border-radius: 999px;
+      border: 1px solid color-mix(in oklab, #e05c0b 18%, transparent);
+      background: #e05c0b;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #collection-desc-{{ section.id }} .cdb__toggle:hover {
+      border-color: color-mix(in oklab, var(--cdb-text) 28%, transparent);
+    }
+
+    /* Spacing helpers when using full width */
+    #collection-desc-{{ section.id }}.cdb { display:block; }
+  </style>
+
+  <script>
+    (function(){
+      var root = document.getElementById('collection-desc-{{ section.id }}');
+      if (!root) return;
+
+      var descEl = root.querySelector('.cdb__desc');
+      var toggleBtn = root.querySelector('[data-cdb-toggle]');
+      if (!descEl || !toggleBtn) return;
+
+      function expand(){
+        descEl.classList.remove('cdb__desc--clamped');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        descEl.setAttribute('aria-expanded', 'true');
+        var more = toggleBtn.querySelector('[data-cdb-more]');
+        var less = toggleBtn.querySelector('[data-cdb-less]');
+        if (more) more.hidden = true;
+        if (less) less.hidden = false;
+      }
+      function collapse(){
+        descEl.classList.add('cdb__desc--clamped');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        descEl.setAttribute('aria-expanded', 'false');
+        var more = toggleBtn.querySelector('[data-cdb-more]');
+        var less = toggleBtn.querySelector('[data-cdb-less]');
+        if (more) more.hidden = false;
+        if (less) less.hidden = true;
+      }
+
+      // Start clamped
+      collapse();
+
+      toggleBtn.addEventListener('click', function(){
+        var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          collapse();
+          // Optional: scroll back to top of section when collapsing
+          // root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          expand();
+        }
+      });
+
+      // If description is short (doesn't overflow), auto-hide toggle + fade
+      // Use a microtask to ensure layout is measured after styles apply
+      setTimeout(function(){
+        // Create a clone to measure real lines without clamp
+        var clone = descEl.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.visibility = 'hidden';
+        clone.style.maxHeight = 'none';
+        clone.style.display = 'block';
+        clone.classList.remove('cdb__desc--clamped');
+        root.appendChild(clone);
+
+        var clampedHeight = descEl.getBoundingClientRect().height;
+        var fullHeight = clone.getBoundingClientRect().height;
+        root.removeChild(clone);
+
+        if (fullHeight <= clampedHeight + 1) {
+          // No overflow -> hide toggle & fade
+          var fade = root.querySelector('.cdb__fade');
+          if (fade) fade.style.display = 'none';
+          if (toggleBtn) toggleBtn.style.display = 'none';
+        }
+      }, 0);
+    })();
+  </script>
+
+  <noscript>
+    <style>
+      #collection-desc-{{ section.id }} .cdb__desc--clamped { -webkit-line-clamp: unset !important; }
+      #collection-desc-{{ section.id }} .cdb__fade, 
+      #collection-desc-{{ section.id }} .cdb__toggle { display: none !important; }
+    </style>
+  </noscript>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "CTM Collection  Banner",
+  "tag": "section",
+  "class": "section",
+  "templates": ["collection"],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_heading",
+      "label": "Custom heading (optional)",
+      "info": "Defaults to the collection title if left empty."
+    },
+    {
+      "type": "select",
+      "id": "heading_align",
+      "label": "Heading alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Description alignment",
+      "default": "inherit",
+      "options": [
+        { "value": "inherit", "label": "Theme default" },
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" },
+        { "value": "justify", "label": "Justify" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "max_lines",
+      "label": "Number of lines to show (clamp)",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_fade",
+      "label": "Show gradient fade on clamp",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toggle",
+      "label": "Show Read More / Read Less button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "read_more_label",
+      "label": "Read More label",
+      "default": "Read more"
+    },
+    {
+      "type": "text",
+      "id": "read_less_label",
+      "label": "Read Less label",
+      "default": "Read less"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#F7F7F7"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 28,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_y",
+      "label": "Vertical padding (px)",
+      "min": 8,
+      "max": 64,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_x",
+      "label": "Horizontal padding (px)",
+      "min": 8,
+      "max": 64,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "checkbox",
+      "id": "border",
+      "label": "Subtle border",
+      "default": false
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "CTM Collection  Banner",
+      "category": "Collection",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

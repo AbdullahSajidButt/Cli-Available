@@ -1,0 +1,345 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "collection_list_KgFDDx": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_6rPQ6L": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "abracs",
+            "icon": "shopify://shop_images/Abracs.jpg",
+            "menu": ""
+          }
+        },
+        "featured_collection_YPCi34": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "active",
+            "icon": "shopify://shop_images/Active.jpg",
+            "menu": ""
+          }
+        },
+        "featured_collection_YKpznP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "actis",
+            "icon": "shopify://shop_images/Actis.png",
+            "menu": ""
+          }
+        },
+        "featured_collection_ApimKR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "abus",
+            "icon": "shopify://shop_images/Abus.png",
+            "menu": ""
+          }
+        },
+        "featured_collection_zCHtMz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "accesso-turtle-enviro",
+            "icon": "shopify://shop_images/Accesso_Turtle_Enviro.png",
+            "menu": ""
+          }
+        },
+        "featured_collection_fddL8i": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "acl",
+            "icon": "shopify://shop_images/Acl.svg",
+            "menu": ""
+          }
+        },
+        "featured_collection_PkK6A6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_V6QRMm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_X97Lzx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_yfbGkR": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_FFBKAf": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_RaXcqY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_xNbBfr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_fxDHzx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_K8pNie": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_kdwtLr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_zRVbaw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_wYyVNr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_TbgVzC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_QkyrDC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_gnjQTP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_Ud9PMz": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_tjD8zJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_kGa7zD": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_xx9m6U": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_UBXGQT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_DQRGj3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_bAeHFJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_wCaxpa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_YQK6Yc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_gaCjFi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_dQp34w": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_LJtFxn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_hPePEx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        },
+        "featured_collection_LFr7fT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_6rPQ6L",
+        "featured_collection_YPCi34",
+        "featured_collection_YKpznP",
+        "featured_collection_ApimKR",
+        "featured_collection_zCHtMz",
+        "featured_collection_fddL8i",
+        "featured_collection_PkK6A6",
+        "featured_collection_V6QRMm",
+        "featured_collection_X97Lzx",
+        "featured_collection_yfbGkR",
+        "featured_collection_FFBKAf",
+        "featured_collection_RaXcqY",
+        "featured_collection_xNbBfr",
+        "featured_collection_fxDHzx",
+        "featured_collection_K8pNie",
+        "featured_collection_kdwtLr",
+        "featured_collection_zRVbaw",
+        "featured_collection_wYyVNr",
+        "featured_collection_TbgVzC",
+        "featured_collection_QkyrDC",
+        "featured_collection_gnjQTP",
+        "featured_collection_Ud9PMz",
+        "featured_collection_tjD8zJ",
+        "featured_collection_kGa7zD",
+        "featured_collection_xx9m6U",
+        "featured_collection_UBXGQT",
+        "featured_collection_DQRGj3",
+        "featured_collection_bAeHFJ",
+        "featured_collection_wCaxpa",
+        "featured_collection_YQK6Yc",
+        "featured_collection_gaCjFi",
+        "featured_collection_dQp34w",
+        "featured_collection_LJtFxn",
+        "featured_collection_hPePEx",
+        "featured_collection_LFr7fT"
+      ],
+      "custom_css": [
+        ".collection-card-wrapper .card--standard > .card__content {justify-content: center;}",
+        ".collection-list-title {text-align: center;}",
+        ".collection-list-wrapper .card .counter {display: none;}",
+        ".collection-list .card__content .card__heading {margin-top: 15px; margin-bottom: 0px;}",
+        ".card .media {width: 100%; background: #e7e7e7;}"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Shop By Brands",
+        "heading_size": "h2",
+        "description": "<p></p><p>At <strong>DirectSuppliesUK</strong>  Building Supplies we are proud to work with many of the nation's top brands, manufacturers and distributors to bring you the best quality products with exceptional customer service.</p><p><br/></p>",
+        "description_style": "body",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "bkg_color": "",
+        "full-width": false,
+        "show_view_all": false,
+        "enable_desktop_slider": false,
+        "columns_mobile": "1",
+        "product_row": true,
+        "swipe_on_mobile": false,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collection_list_KgFDDx"
+  ]
+}

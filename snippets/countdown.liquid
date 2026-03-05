@@ -1,0 +1,281 @@
+{% capture time_check %}
+{% for tag in product.tags %}
+{%if tag contains 'Time_' %}
+{% assign tag_time = tag | split : 'Time_' | last %}
+{{ tag_time }}
+{% endif %}
+{%  endfor %}
+{% endcapture %}
+{% if tag_time %}
+  <div class="flip-countdown simple-countdown">
+    <div class="countdown-text quick-add-hidden">{{ 'sections.countdown.countdown_text' | t }}</div>
+    <div
+      class="countdown-container flip-countdown countdown-block content-container"
+      data-countdown="{{ tag_time }}"
+    ></div>
+  </div>
+
+  <style>
+    .flip-countdown.simple-countdown{
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+    }
+    /* .card-wrapper:hover .flip-countdown{
+      opacity: 1;
+    } */
+    .card__inner > .flip-countdown {
+    	display: flex;
+    	margin: 0;
+    	justify-content: var(--text-alignment);
+    	margin-top: -2px;
+    	position: absolute;
+    	top: auto;
+    	bottom: 0px;
+    	left: 0px;
+    	right: auto;
+    	width: max-content;
+    	align-items: center;
+    	transition: all 0.3s ease-in-out;
+    	gap: 5px;
+    }
+    .countdown-container.countdown-block {
+      /* display: inline-flex;
+      position: relative;
+      background-color: var(--color-base-background-2); */
+      border: 0;
+      display: block;
+      position: relative;
+      padding-top: 13px;
+      margin-bottom: 0;
+      background: #fff;
+      min-width: max-content;
+      color: #da3f3f;
+    }
+    .countdown-block > span {
+      width: auto;
+      display: inline-flex;
+      flex-direction: column;
+      text-align: center;
+      color: var(--color-base-accent-2);
+      position: relative;
+      margin-inline: 8px;
+    }
+    .countdown-block > span:first-child {
+      margin-inline-start: 0px;
+    }
+    .countdown-block > span:last-child {
+      margin-inline-end: 0px;
+    }
+    .countdown-block > span::after {
+      content: ":";
+      position: absolute;
+      right: -11px;
+      left: auto;
+      top: 8px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .countdown-block > span:last-child::after {
+      display: none;
+    }
+    .card__information .flip-countdown {
+      padding: 0;
+    }
+    .countdown-block .countdown .time {
+      width: auto;
+      font-size: 17px;
+      min-width: 48px;
+      min-height: 48px;
+      max-width: 48px;
+      max-height: 48px;
+      border: 1px solid var(--color-base-border);
+      border-radius: 5px;
+      line-height: initial;
+      padding: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      background: var(--color-base-background-1);
+    }
+     .countdown-block > span:last-child .time{
+       border-color: var(--color-base-accent-1);
+       color: var(--color-base-accent-1);
+     }
+    .countdown-block > span:last-child .time-txt{
+      color: var(--color-base-accent-1);
+    }
+    .countdown-block span span.time-txt {
+      text-align: center;
+      width: auto;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      display: block;
+      color: var(--color-base-accent-2);
+    }
+    /* .countdown-block span span.time-txt:first-letter {
+      font-size: 13px;
+      line-height: 23px;
+      text-transform: capitalize;
+    } */
+    .flip-countdown .counter-text {
+      color: rgb(var(--color-base-outline-button-labels));
+      margin-block: 20px;
+      display: block;
+    }
+    .countdown-text{
+      color: #dd3842;
+      font-weight: 700;
+      padding: 0 0 7px;
+      clear: both;
+      font-size: 15px;
+      line-height: initial;
+      display: none;
+    }
+    .flip-countdown .icon {
+    	width: 14px;
+    	height: 25px;
+        color: red;
+    }
+    /*product-page */
+    .product.grid .product__info-container .countdown-container.countdown-block {
+        margin: 0;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown {
+      position: relative;
+      left: 0;
+      margin: 0;
+      right: auto;
+      justify-content: flex-start;
+      flex-direction: column;
+      bottom: 0;
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-block .countdown .time {
+      font-size: 16px;
+      min-width: 48px;
+      min-height: 48px;
+      max-width: 48px;
+      max-height: 48px;
+      border: 1px solid var(--color-base-border);
+      border-radius: 5px;
+      line-height: initial;
+      padding: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      background: var(--color-base-background-1);
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-block > span {
+      color: var(--color-base-accent-2);
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-block > span:last-child  {
+      color: #dd3842;
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-block > span:last-child .time {
+        border: 1px solid var(--color-base-accent-1);
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-block > span {
+      flex-direction: column;
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-block > span::after {
+      top: 8px;
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown .countdown-text{
+      display: block;
+      color: var(--color-base-accent-2);
+    }
+    .product.grid .product__info-container .flip-countdown.simple-countdown span:first-child {
+    	margin-inline-start: 0;
+    }
+    .product.grid .product__info-container .flip-countdown .icon {
+    	display: none;
+    }
+    .product.grid .product__info-container .countdown-block span span.time-txt {
+      display: block;
+      font-size: 14px;
+    }
+    @media(max-width:989px){
+      .countdown-block > span {
+        margin-inline: 5px;
+      }
+      .countdown-block > span:last-child {
+        margin-inline-end: 3px;
+      }
+      .countdown-container.flip-countdown.countdown-block {
+        padding: 3px 2px;
+      }
+      .countdown-block > span::after {
+        right: -7px;
+      }
+      .countdown-block .countdown .time {
+    	font-size: 15px;
+        min-width: 42px;
+        min-height: 42px;
+        max-width: 42px;
+        max-height: 42px;
+      }
+      .countdown-block span span.time-txt {
+    	font-size: 14px;
+    	font-weight: 500;
+      }
+    }
+     @media(max-width:767px){
+       .flip-countdown.simple-countdown {
+      	justify-content: flex-start;
+      }
+     }
+    @media (max-width: 749px){
+      .countdown-block .countdown .time {
+    	font-size: 14px;
+    	min-width: 39px;
+    	min-height: 39px;
+    	max-width: 39px;
+    	max-height: 39px;
+    }
+    }
+     @media (max-width: 575px){
+       .countdown-container.countdown-block {
+    	border: 0;
+    	display: block;
+    	position: relative;
+    	padding-top: 5px;
+    }
+     }
+    @media (max-width: 479px) {
+      .product.grid .product__info-container .countdown-block > span:first-child {
+      	margin-inline-start: 6px;
+      }
+      .product.grid .product__info-container .countdown-block > span {
+      	margin-inline: 6px;
+      }
+      .product.grid .product__info-container .countdown-block > span:last-child {
+      	margin-inline-end: 6px;
+      }
+      .product.grid .product__info-container .countdown-block > span::after {
+      	right: -8px;
+      }
+      .product.grid .product__info-container .countdown-block .countdown .time {
+      	font-size: 16px;
+      	line-height: 20px;
+      }
+    }
+    @media(max-width:380px){
+      .special-products .flip-countdown{
+        display: none;
+      }
+      .countdown-block span span.time-txt {
+    	display: none;
+      }
+      .flip-countdown .icon {
+    	display: none;
+    }
+    }
+  </style>
+{% endif %}

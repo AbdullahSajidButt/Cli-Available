@@ -1,0 +1,92 @@
+.services {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+.services-block {
+  border-radius: 5px;
+}
+.service {
+  display: flex;
+  text-decoration: none;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 15px;
+}
+.service.service-5::after {
+  display: none;
+}
+/* .service::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  border-right: 1px solid var(--color-base-border);
+  right: -35px;
+  height: 45px;
+  top: 6px;
+}
+.service.service-4::after {
+  content: none;
+} */
+.service-icon {
+  display: inline-block !important;
+  height: 50px;
+  width: 65px;
+  position: relative;
+  background-repeat: no-repeat;
+  transition: all .5s ease-in-out;
+  background-position: center 2px;
+}
+.service:hover .service-icon {
+  background-position: center -75px;
+}
+.service-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-foreground);
+  line-height: 20px;
+  padding-bottom: 6px;
+}
+.service-description {
+  max-width: 200px;
+}
+.service-subtitle {
+  color: var(--color-base-text);
+  font-size: 14px;
+  line-height: 20px;
+}
+@media screen and (max-width: 1549px) {
+  .service::after {
+    right: -10%;
+  }
+}
+@media screen and (max-width: 1449px) {
+  .service::after {
+    display: none;
+  }
+}
+@media screen and (max-width: 1269px) {
+  .service::after {
+    display: none;
+  }
+  .service-icon {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 575px){
+  .services {
+	gap: 30px;
+}
+}
+
+
+/* add new css start */
+.service:hover .service-icon {
+  background-position: inherit !important;
+}
+.service-title {
+    font-size: 15px !important;
+    padding-bottom: 15px!important;
+}

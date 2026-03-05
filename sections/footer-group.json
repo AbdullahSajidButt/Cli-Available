@@ -1,0 +1,153 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "5e19abcf-1cfb-4285-945f-b821cc717a0d": {
+      "type": "newsletter",
+      "blocks": {
+        "sections--16090226229300__5e19abcf-1cfb-4285-945f-b821cc717a0d-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Newsletter For $10 Off"
+          }
+        },
+        "sections--16090226229300__5e19abcf-1cfb-4285-945f-b821cc717a0d-paragraph-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Subscribe to our latest newsletter get news about upcoming sales</p>"
+          }
+        },
+        "sections--16090226229300__5e19abcf-1cfb-4285-945f-b821cc717a0d-email_form-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "sections--16090226229300__5e19abcf-1cfb-4285-945f-b821cc717a0d-heading-1",
+        "sections--16090226229300__5e19abcf-1cfb-4285-945f-b821cc717a0d-paragraph-1",
+        "sections--16090226229300__5e19abcf-1cfb-4285-945f-b821cc717a0d-email_form-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "accent-1",
+        "text_color": "#ffffff",
+        "full_width": true,
+        "margin_top": 70,
+        "padding_top": 35,
+        "padding_bottom": 35,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "d3748640-42cf-4dd2-a5a3-a94ec0cb7a89": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Policies",
+            "menu": "main-menu"
+          }
+        },
+        "brand_information_JeBMmG": {
+          "type": "brand_information",
+          "disabled": true,
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_4KGzfF": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Main Menu",
+            "menu": "footer"
+          }
+        },
+        "link_list_WQpjDr": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "heading": "Policies",
+            "menu": ""
+          }
+        },
+        "b73a7bc6-b723-4a02-8307-98d83469cd09": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact Us",
+            "subtext": "<p>3424 Arnold LN Falls Church Virginia 22042</p>",
+            "email_address": "demo@example.com",
+            "email": "mailto:demo@example.com",
+            "contact_num": "7036237302",
+            "contact": "tel: 7036237302",
+            "contact_info": ""
+          }
+        },
+        "brand_information_KLCqPF": {
+          "type": "brand_information",
+          "disabled": true,
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "d3748640-42cf-4dd2-a5a3-a94ec0cb7a89",
+        "brand_information_JeBMmG",
+        "link_list_4KGzfF",
+        "link_list_WQpjDr",
+        "b73a7bc6-b723-4a02-8307-98d83469cd09",
+        "brand_information_KLCqPF"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.footer-block__details-content .list-menu__item--link:hover, .copyright__content a:hover {color: #e05c0b !important; }}",
+        ".grid {justify-content: space-between !important;}"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "footer_logo": "shopify://shop_images/logo1_a02abef5-ab0e-413a-97a8-4b86ae77609a.png",
+        "footer_logo_width": 190,
+        "newsletter_enable": true,
+        "newsletter_heading": "",
+        "newsletter_text": "<strong>Company Name: </strong>Star Horse LLC <strong>Owner Name:</strong> Nadeem Khan   This company is related to selling Tools. ToolsHub is a leading provider of high-quality, reliable tools and equipment designed to meet the needs of both professionals and DIY enthusiasts.",
+        "app_link_1": "#",
+        "app_link_2": "#",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 70,
+        "padding_bottom": 10
+      }
+    },
+    "mobile-menu": {
+      "type": "mobile-menu",
+      "settings": {
+        "show_mobile_menu": true,
+        "color_scheme": "background-1",
+        "show_mobile_search": true,
+        "show_mobile_account": true,
+        "show_mobile_home": true,
+        "show_mobile_collections": true,
+        "show_mobile_cart": true
+      }
+    }
+  },
+  "order": [
+    "5e19abcf-1cfb-4285-945f-b821cc717a0d",
+    "footer",
+    "mobile-menu"
+  ]
+}

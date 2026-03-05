@@ -1,0 +1,777 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "tab_collection_EJNUR7": {
+      "type": "tab_collection",
+      "blocks": {
+        "slider_artrEe": {
+          "type": "slider",
+          "settings": {
+            "title1": "Body Parts",
+            "collection1": "one"
+          }
+        },
+        "slider_rkLimd": {
+          "type": "slider",
+          "settings": {
+            "title1": "Body Parts",
+            "collection1": ""
+          }
+        },
+        "slider_PQkVLf": {
+          "type": "slider",
+          "settings": {
+            "title1": "Body Parts",
+            "collection1": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "slider_artrEe",
+        "slider_rkLimd",
+        "slider_PQkVLf"
+      ],
+      "name": "t:sections.tab_collection.presets.name",
+      "settings": {
+        "title": "Trending Products",
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "products_to_show": 8,
+        "columns_desktop": 5,
+        "image_ratio": "adapt",
+        "show_counter": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "button",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "7102a354-77b3-460a-8438-43f6be6fdc83": {
+      "type": "slideshow",
+      "blocks": {
+        "template--18809520881977__7102a354-77b3-460a-8438-43f6be6fdc83-16824275885b402105-0": {
+          "type": "slide",
+          "settings": {
+            "heading": "",
+            "subheading": "",
+            "description": "",
+            "price": "",
+            "button_label": "",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-2",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "23fd5feb-03bd-4146-a16a-e9cb0514bb31": {
+          "type": "slide",
+          "settings": {
+            "heading": "",
+            "subheading": "",
+            "description": "",
+            "price": "",
+            "button_label": "",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-2",
+            "text_alignment_mobile": "left"
+          }
+        },
+        "slide_3aKjRe": {
+          "type": "slide",
+          "settings": {
+            "heading": "",
+            "subheading": "",
+            "description": "",
+            "price": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": true,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-2",
+            "text_alignment_mobile": "left"
+          }
+        }
+      },
+      "block_order": [
+        "template--18809520881977__7102a354-77b3-460a-8438-43f6be6fdc83-16824275885b402105-0",
+        "23fd5feb-03bd-4146-a16a-e9cb0514bb31",
+        "slide_3aKjRe"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".slideshow_banner {margin-top: 0px !important;}"
+      ],
+      "settings": {
+        "layout": "grid",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 7,
+        "image_behavior": "none",
+        "banner_label": "",
+        "banner_heading": "",
+        "banner_subheading": "",
+        "button_label_1": "",
+        "button_link_1": "#",
+        "banner_label_2": "<p>From $240</p>",
+        "banner_heading_2": "<p>Buy Brake</p>",
+        "banner_subheading_2": "<p>Spin-On Lube Filter</p>",
+        "button_label_2": "Shop Now",
+        "button_link_2": "#",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "collage_Peafcy": {
+      "type": "collage",
+      "blocks": {
+        "image_94QwfT": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_yamWRx": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_Rd8iyT": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_94QwfT",
+        "image_yamWRx",
+        "image_Rd8iyT"
+      ],
+      "disabled": true,
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "collage_LCDTTN": {
+      "type": "collage",
+      "blocks": {
+        "image_i3K77d": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_qdBawE": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_VdPJ8k": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_i3K77d",
+        "image_qdBawE",
+        "image_VdPJ8k"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "tab_collection_bnTkH7": {
+      "type": "tab_collection",
+      "blocks": {
+        "slider_XrpjYc": {
+          "type": "slider",
+          "settings": {
+            "title1": "Routers Bits",
+            "collection1": "routers-bits-wood-shapers"
+          }
+        },
+        "slider_fqAkey": {
+          "type": "slider",
+          "settings": {
+            "title1": "Digital Tape",
+            "collection1": "digital-tape-measures-accessories"
+          }
+        },
+        "slider_fenn7f": {
+          "type": "slider",
+          "settings": {
+            "title1": "Cordless Tool",
+            "collection1": "cordless-tool-combination-kits-1"
+          }
+        }
+      },
+      "block_order": [
+        "slider_XrpjYc",
+        "slider_fqAkey",
+        "slider_fenn7f"
+      ],
+      "custom_css": [
+        ".product_tab-block ul.tabs li a.active,.product_tab-block ul.tabs li a:hover {color: #e05c0b !important;}",
+        ".card-information > .price {color: #e05c0b !important;}"
+      ],
+      "name": "t:sections.tab_collection.presets.name",
+      "settings": {
+        "title": "<strong>Trending Products</strong>",
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "products_to_show": 14,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_counter": true,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "button_style": "button",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "category_BWhk9H": {
+      "type": "category",
+      "blocks": {
+        "category_cWL8yd": {
+          "type": "category",
+          "settings": {
+            "title": "Bucket Bags",
+            "alt": "",
+            "link": "shopify://collections/bucket-bags-aerial-bucket-tool-storage"
+          }
+        },
+        "category_ntpgak": {
+          "type": "category",
+          "settings": {
+            "title": "Debris & Leaf Blowers",
+            "alt": "",
+            "link": "shopify://collections/debris-leaf-blowers"
+          }
+        },
+        "category_CgjJC8": {
+          "type": "category",
+          "settings": {
+            "title": "Breaker Bars",
+            "alt": "",
+            "link": "shopify://collections/breaker-bars"
+          }
+        },
+        "category_ddzcT4": {
+          "type": "category",
+          "settings": {
+            "title": "Digital Tape Measures",
+            "alt": "",
+            "link": "shopify://collections/digital-tape-measures-accessories"
+          }
+        },
+        "category_fbpfGG": {
+          "type": "category",
+          "settings": {
+            "title": "Electrician's Power Tools",
+            "alt": "",
+            "link": "shopify://collections/electricians-power-tools"
+          }
+        },
+        "category_tf9r9e": {
+          "type": "category",
+          "settings": {
+            "title": "Cordless Tool Combination Kits",
+            "alt": "",
+            "link": "shopify://collections/cordless-tool-combination-kits-1"
+          }
+        },
+        "category_7PmVgH": {
+          "type": "category",
+          "settings": {
+            "title": "Adjustable Wrenches & Sets",
+            "alt": "",
+            "link": "shopify://collections/adjustable-wrenches-sets"
+          }
+        },
+        "category_PNzYn3": {
+          "type": "category",
+          "settings": {
+            "title": "String Trimmers Brush",
+            "alt": "",
+            "link": "shopify://collections/string-trimmers-brush-cutters-edgers"
+          }
+        },
+        "category_P3FGfF": {
+          "type": "category",
+          "disabled": true,
+          "settings": {
+            "title": "Category",
+            "alt": "",
+            "link": ""
+          }
+        },
+        "category_btq3Fr": {
+          "type": "category",
+          "disabled": true,
+          "settings": {
+            "title": "Category",
+            "alt": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_cWL8yd",
+        "category_ntpgak",
+        "category_CgjJC8",
+        "category_ddzcT4",
+        "category_fbpfGG",
+        "category_tf9r9e",
+        "category_7PmVgH",
+        "category_PNzYn3",
+        "category_P3FGfF",
+        "category_btq3Fr"
+      ],
+      "name": "Category slider",
+      "settings": {
+        "heading": "Shop By Categories",
+        "show_arrows": true,
+        "cards_per_row": 4,
+        "cards_per_row_mobile": 1
+      }
+    },
+    "611ed898-7a23-492f-b24d-1f1c23c8d72d": {
+      "type": "subbanner",
+      "blocks": {
+        "17c832b8-2b75-481e-862e-1a889647875c": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "subheading": "<p>Pipe Insulation</p>",
+            "description": "<p>For Any Vehicle</p>",
+            "button_label": "Shop Now",
+            "button_link": "#",
+            "button_style": "link",
+            "color_scheme": "accent-2"
+          }
+        },
+        "image_TXbbGx": {
+          "type": "image",
+          "settings": {
+            "heading": "<p><strong>Efficient Power Cutting</strong></p>",
+            "subheading": "",
+            "description": "<p>The Milwaukee Chainsaw offers powerful performance and precision for effortless cutting through wood with ease.<br/><br/></p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify://products/battery-powered-chainsaw-kit-12-in-bar-lg-top-handle-auto-chain-oiler-56-v-25-4-cc",
+            "button_style": "button",
+            "color_scheme": "background-1"
+          }
+        },
+        "image_AhPaRf": {
+          "type": "image",
+          "settings": {
+            "heading": "<p><strong>Powerful Leaf Blower</strong></p>",
+            "subheading": "",
+            "description": "<p>This backpack leaf blower delivers efficient, high-powered air flow to quickly clear leaves and debris in outdoor spaces.<br/></p>",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/debris-leaf-blowers",
+            "button_style": "button",
+            "color_scheme": "background-1"
+          }
+        }
+      },
+      "block_order": [
+        "17c832b8-2b75-481e-862e-1a889647875c",
+        "image_TXbbGx",
+        "image_AhPaRf"
+      ],
+      "custom_css": [
+        ".sub-banner {display: flex; flex: 1;}",
+        ".sub-banner .banner-inner {width: 100%;}",
+        ".banner-inner a {display: flex; width: 100%;}",
+        ".banner-inner a {width: 100%;}",
+        ".banners .sub-banner .banner-inner img {width: 100%;}"
+      ],
+      "settings": {
+        "addclass": "",
+        "column_alignment": "left",
+        "content_alignment": "left",
+        "padding_top": 52,
+        "padding_bottom": 20
+      }
+    },
+    "featured_collection_list_VkHdFw": {
+      "type": "featured-collection-list",
+      "settings": {
+        "title": "<strong>Best Seller Products</strong>",
+        "layout": "grid",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "banner_text": "<p>Ceiling Light Lamp Home</p>",
+        "banner_heading": "",
+        "button_label": "Shop Now",
+        "button_link": "",
+        "collection": "cordless-tool-combination-kits-1",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "product_row": true,
+        "show_counter": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "button_style": "button",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "special_product_atjH7b": {
+      "type": "special-product",
+      "disabled": true,
+      "name": "t:sections.special-product.presets.name",
+      "settings": {
+        "title": "Deal Of The Week",
+        "heading_size": "h2",
+        "layout": "grid",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "banner_text": "<p>The Heart AndScience Of Medic Test</p>",
+        "banner_heading": "<p>UP TO 20% off</p>",
+        "button_label": "Shop Now",
+        "button_link": "",
+        "collection": "debris-leaf-blowers",
+        "products_to_show": 6,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_counter": true,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "button",
+        "columns_mobile": "1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "c4b5b68a-1efe-4991-b2a0-b783052733e5": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--18809520881977__c4b5b68a-1efe-4991-b2a0-b783052733e5-16830088577af1d5a3-0": {
+          "type": "column",
+          "settings": {
+            "heading": "“Reliable product delivers.”",
+            "title": "Stefanie Rashford",
+            "authore_details": "",
+            "text": "<p>The point of using Lorem Ipsum is that & normal they a  always wash up well thisversions of lorem Ipsum.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--18809520881977__c4b5b68a-1efe-4991-b2a0-b783052733e5-16830088577af1d5a3-1": {
+          "type": "column",
+          "settings": {
+            "heading": "“Excellent customer service.”",
+            "title": "Augusta Wind",
+            "authore_details": "",
+            "text": "<p>The point of using Lorem Ipsum is that & normal they a  always wash up well thisversions of lorem Ipsum.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18809520881977__c4b5b68a-1efe-4991-b2a0-b783052733e5-16830088577af1d5a3-0",
+        "template--18809520881977__c4b5b68a-1efe-4991-b2a0-b783052733e5-16830088577af1d5a3-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "What Our Clients Say",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "image_width": "third",
+        "image_ratio": "circle",
+        "columns_desktop": 4,
+        "full-width": false,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "inverse",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 70,
+        "padding_bottom": 70,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "logo_bar_XzWNmW": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_image_hEfzrd": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_image_6Pt9e3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_image_JCjrci": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_image_rWFPi3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_image_Rd4ebT": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_image_igHkk9": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_hEfzrd",
+        "logo_image_6Pt9e3",
+        "logo_image_JCjrci",
+        "logo_image_rWFPi3",
+        "logo_image_Rd4ebT",
+        "logo_image_igHkk9"
+      ],
+      "disabled": true,
+      "name": "t:sections.logo-bar.presets.name",
+      "settings": {
+        "heading": "Trusted Brands",
+        "heading_size": "h2",
+        "color_scheme": "background-1",
+        "logo_grid": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "d477e943-37b9-43e0-99ad-802cb9a5a21d": {
+      "type": "featured-blog",
+      "custom_css": [
+        ".article-card__link.link:hover {color: #f6ab4b;}"
+      ],
+      "settings": {
+        "heading": "<strong>Our Latest Blog</strong>",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "blog": "news",
+        "post_limit": 6,
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "service_eVANNY": {
+      "type": "service",
+      "blocks": {
+        "service_image_RGmFYb": {
+          "type": "service_image",
+          "settings": {
+            "service-title": "GREAT VALUE",
+            "service-subtitle": "Compare our prices!",
+            "button_link": ""
+          }
+        },
+        "service_image_rBU9Y6": {
+          "type": "service_image",
+          "settings": {
+            "service-title": "FAST DELIVERY",
+            "service-subtitle": "On ALL UK orders",
+            "button_link": ""
+          }
+        },
+        "service_image_mgk3wQ": {
+          "type": "service_image",
+          "settings": {
+            "service-title": "5 STAR SERVICE",
+            "service-subtitle": "We love our customers!",
+            "button_link": ""
+          }
+        },
+        "service_image_7D6ekt": {
+          "type": "service_image",
+          "settings": {
+            "service-title": "TOP BRANDS",
+            "service-subtitle": "Great hardware brands",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_image_RGmFYb",
+        "service_image_rBU9Y6",
+        "service_image_mgk3wQ",
+        "service_image_7D6ekt"
+      ],
+      "custom_css": [
+        ".service {gap: 0px;}",
+        ".service-title {padding-bottom: 0px !important;}"
+      ],
+      "name": "t:sections.service.presets.name",
+      "settings": {
+        "background_color": "#ffffff",
+        "full_width": false,
+        "heading": "",
+        "heading_size": "h2",
+        "margin_top": 0,
+        "padding_top": 20,
+        "padding_bottom": 10,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "newsletter_CmhMPm": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_DhhdXd": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Newsletter"
+          }
+        },
+        "paragraph_yerqHD": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Subscribe to our latest newsletter get news about upcoming sales</p>"
+          }
+        },
+        "email_form_gWpCDf": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_DhhdXd",
+        "paragraph_yerqHD",
+        "email_form_gWpCDf"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "accent-1",
+        "text_color": "#ffffff",
+        "full_width": true,
+        "margin_top": 70,
+        "padding_top": 35,
+        "padding_bottom": 35,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    }
+  },
+  "order": [
+    "tab_collection_EJNUR7",
+    "7102a354-77b3-460a-8438-43f6be6fdc83",
+    "collage_Peafcy",
+    "collage_LCDTTN",
+    "tab_collection_bnTkH7",
+    "category_BWhk9H",
+    "611ed898-7a23-492f-b24d-1f1c23c8d72d",
+    "featured_collection_list_VkHdFw",
+    "special_product_atjH7b",
+    "c4b5b68a-1efe-4991-b2a0-b783052733e5",
+    "logo_bar_XzWNmW",
+    "d477e943-37b9-43e0-99ad-802cb9a5a21d",
+    "service_eVANNY",
+    "newsletter_CmhMPm"
+  ]
+}

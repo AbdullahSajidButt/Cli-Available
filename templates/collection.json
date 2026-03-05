@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_mapeaL": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  Clean Shopify Breadcrumbs\n  - Fixes double slash issue\n  - Removes trailing slash at end\n  - Supports Product, Collection, Page, Blog, and Article\n  - SEO-friendly schema\n{% endcomment %}\n\n<nav class=\"breadcrumb\" role=\"navigation\" aria-label=\"breadcrumbs\">\n  <ol class=\"breadcrumb__list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\">\n    <!-- Home -->\n    <li class=\"breadcrumb__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n      <a href=\"{{ routes.root_url | remove: '//' }}\" itemprop=\"item\">\n        <span itemprop=\"name\">Home</span>\n      </a>\n      <meta itemprop=\"position\" content=\"1\" />\n    </li>\n\n    {% assign position = 2 %}\n    {% assign show_separator = true %}\n\n    <!-- Collection -->\n    {% if template contains 'collection' and collection.handle %}\n      <li class=\"breadcrumb__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <a href=\"{{ collection.url }}\" itemprop=\"item\">\n          <span itemprop=\"name\">{{ collection.title }}</span>\n        </a>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n      {% assign position = position | plus: 1 %}\n    {% endif %}\n\n    <!-- Product -->\n    {% if template contains 'product' %}\n      {% if collection and collection.handle %}\n        <!-- Collection already shown -->\n      {% else %}\n        <li class=\"breadcrumb__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n          <a href=\"/collections/all\" itemprop=\"item\">\n            <span itemprop=\"name\">All Products</span>\n          </a>\n          <meta itemprop=\"position\" content=\"{{ position }}\" />\n        </li>\n        {% assign position = position | plus: 1 %}\n      {% endif %}\n\n      <li class=\"breadcrumb__item breadcrumb__item--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ product.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n\n    <!-- Page -->\n    {% elsif template contains 'page' %}\n      <li class=\"breadcrumb__item breadcrumb__item--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ page.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n\n    <!-- Blog -->\n    {% elsif template contains 'blog' and blog.handle %}\n      <li class=\"breadcrumb__item breadcrumb__item--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ blog.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n\n    <!-- Article -->\n    {% elsif template contains 'article' %}\n      <li class=\"breadcrumb__item\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <a href=\"{{ blog.url }}\" itemprop=\"item\">\n          <span itemprop=\"name\">{{ blog.title }}</span>\n        </a>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n      {% assign position = position | plus: 1 %}\n      <li class=\"breadcrumb__item breadcrumb__item--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ article.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n    {% endif %}\n  </ol>\n</nav>\n\n<style>\n  .breadcrumb {\n    font-size: 14px;\n    margin-bottom: 24px;\n  }\n\n  .breadcrumb__list {\n    display: flex;\n    flex-wrap: wrap;\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    gap: 4px;\n  }\n\n  .breadcrumb__item {\n    display: flex;\n    align-items: center;\n  }\n\n\n\n  .breadcrumb__item a {\n    color: #555;\n    text-decoration: none;\n  }\n\n  .breadcrumb__item a:hover {\n    text-decoration: underline;\n  }\n\n  .breadcrumb__item--active span {\n    color: #111;\n    font-weight: 600;\n  }\n    \n.breadcrumb a:hover {\n    color: black;\n}\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "custom_collection_banner_RdHfWa": {
+      "type": "custom-collection-banner",
+      "name": "CTM Collection  Banner",
+      "settings": {
+        "full_width": false,
+        "show_heading": false,
+        "custom_heading": "",
+        "heading_align": "left",
+        "text_align": "inherit",
+        "max_lines": 4,
+        "show_fade": false,
+        "show_toggle": true,
+        "read_more_label": "Read more",
+        "read_less_label": "Read less",
+        "bg_color": "#f7f7f7",
+        "text_color": "#111111",
+        "corner_radius": 8,
+        "padding_y": 24,
+        "padding_x": 24,
+        "border": false
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".card-information > .price {color: #e05c0b !important;}",
+        ".facets__summary:hover {color: #e05c0b !important;}",
+        ".facets__item:hover .facet-checkbox {color: #e05c0b !important;}"
+      ],
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "button_style": "button",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_mapeaL",
+    "custom_collection_banner_RdHfWa",
+    "banner",
+    "product-grid"
+  ]
+}

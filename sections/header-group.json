@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "disabled": true,
+      "settings": {}
+    },
+    "header-top": {
+      "type": "header-top",
+      "blocks": {
+        "header_top_A6LTrz": {
+          "type": "header-top",
+          "settings": {
+            "text": "About Us",
+            "link": "shopify://pages/about-us"
+          }
+        },
+        "header_top_MrCUbm": {
+          "type": "header-top",
+          "settings": {
+            "text": "Contact Us",
+            "link": "shopify://pages/contact"
+          }
+        },
+        "header_top_eGbnNV": {
+          "type": "header-top",
+          "settings": {
+            "text": "Blogs",
+            "link": "shopify://blogs/news"
+          }
+        }
+      },
+      "block_order": [
+        "header_top_A6LTrz",
+        "header_top_MrCUbm",
+        "header_top_eGbnNV"
+      ],
+      "custom_css": [
+        ".header-top__message {color: #fefefe;}"
+      ],
+      "settings": {
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "color_scheme": "accent-2",
+        "headertop_text": "",
+        "padding_top": 7,
+        "padding_bottom": 7
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".search-modal__form .search__input.field__input {color: #e05c0b !important;}",
+        ".cart_price {color: black !important;}",
+        ".tm_header-dropdown.site-header__icon .my-account li a:hover {color: #f6ab4b;}"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "sticky_header_type": "always",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "enable_wishlist_icon": false,
+        "enable_compare_icon": false,
+        "wishlist_title": "",
+        "wishlist_link": "shopify://pages/wishlist",
+        "compare_title": "",
+        "compare_link": "shopify://pages/compare",
+        "contact_info": "",
+        "mobile_logo_position": "left",
+        "margin_bottom": 0,
+        "padding_top": 25,
+        "padding_bottom": 25
+      }
+    },
+    "header-bottom": {
+      "type": "header-bottom",
+      "blocks": {
+        "f7367763-417a-45e8-a42d-d87710f8265c": {
+          "type": "dropdown",
+          "disabled": true,
+          "settings": {
+            "categories_title": "Shop By Categories",
+            "side-categories": "main-menu"
+          }
+        },
+        "4196e2c6-62fe-4f56-9ef1-c574018dd9f4": {
+          "type": "verticle",
+          "disabled": true,
+          "settings": {
+            "categories_title1": "Shop By Categories",
+            "side-categories1": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "f7367763-417a-45e8-a42d-d87710f8265c",
+        "4196e2c6-62fe-4f56-9ef1-c574018dd9f4"
+      ],
+      "custom_css": [
+        "li .site-cat__link:hover,li .site-nav__link:hover {color: #e05c0b !important;}",
+        ".menu-opening .list-menu a:hover {color: #e05c0b;}",
+        ".site-cat--has-dropdown.site-child--has-dropdown ul.site-nav__childlist-grid {width: calc(887px + 7vw) !important; max-width: 58vw !important; flex-wrap: wrap !important; height: 470px; overflow-y: scroll;}",
+        ".site-nav__link.site-nav__child-link {min-width: fit-content !important;}",
+        ".site-nav__childlist-grid .site-nav__childlist-item-dropdown {min-width: 249px !important;}"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "menu_service": "",
+        "link": "shopify://collections/special-products",
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header-top",
+    "header",
+    "header-bottom"
+  ]
+}

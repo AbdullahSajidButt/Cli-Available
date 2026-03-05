@@ -1,0 +1,229 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_hCwUd7": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  Clean Shopify Breadcrumbs\n  - Fixes double slash issue\n  - Removes trailing slash at end\n  - Supports Product, Collection, Page, Blog, and Article\n  - SEO-friendly schema\n{% endcomment %}\n\n<nav class=\"breadcrumb\" role=\"navigation\" aria-label=\"breadcrumbs\">\n  <ol class=\"breadcrumb_list\" itemscope itemtype=\"https://schema.org/BreadcrumbList\">\n    <!-- Home -->\n    <li class=\"breadcrumbitem\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n      <a href=\"{{ routes.root_url | remove: '//' }}\" itemprop=\"item\">\n        <span itemprop=\"name\">Home</span>\n      </a>\n      <meta itemprop=\"position\" content=\"1\" />\n    </li>\n\n    {% assign position = 2 %}\n    {% assign show_separator = true %}\n\n    <!-- Collection -->\n    {% if template contains 'collection' and collection.handle %}\n      <li class=\"breadcrumbitem\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <a href=\"{{ collection.url }}\" itemprop=\"item\">\n          <span itemprop=\"name\">{{ collection.title }}</span>\n        </a>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n      {% assign position = position | plus: 1 %}\n    {% endif %}\n\n    <!-- Product -->\n    {% if template contains 'product' %}\n      {% if collection and collection.handle %}\n        <!-- Collection already shown -->\n      {% else %}\n        <li class=\"breadcrumbitem\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n          <a href=\"/collections/all\" itemprop=\"item\">\n            <span itemprop=\"name\">All Products</span>\n          </a>\n          <meta itemprop=\"position\" content=\"{{ position }}\" />\n        </li>\n        {% assign position = position | plus: 1 %}\n      {% endif %}\n\n      <li class=\"breadcrumbitem breadcrumbitem--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ product.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n\n    <!-- Page -->\n    {% elsif template contains 'page' %}\n      <li class=\"breadcrumbitem breadcrumbitem--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ page.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n\n    <!-- Blog -->\n    {% elsif template contains 'blog' and blog.handle %}\n      <li class=\"breadcrumbitem breadcrumbitem--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ blog.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n\n    <!-- Article -->\n    {% elsif template contains 'article' %}\n      <li class=\"breadcrumbitem\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <a href=\"{{ blog.url }}\" itemprop=\"item\">\n          <span itemprop=\"name\">{{ blog.title }}</span>\n        </a>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n      {% assign position = position | plus: 1 %}\n      <li class=\"breadcrumbitem breadcrumbitem--active\" itemprop=\"itemListElement\" itemscope itemtype=\"https://schema.org/ListItem\">\n        <span itemprop=\"name\">{{ article.title }}</span>\n        <meta itemprop=\"position\" content=\"{{ position }}\" />\n      </li>\n    {% endif %}\n  </ol>\n</nav>\n\n<style>\n  .breadcrumb {\n    font-size: 14px;\n    margin-bottom: 24px;\n  }\n\n  .breadcrumblist {\n    display: flex;\n    flex-wrap: wrap;\n    list-style: none;\n    padding: 0;\n    margin: 0;\n    gap: 4px;\n  }\n\n  .breadcrumbitem {\n    display: flex;\n    align-items: center;\n  }\n\n\n\n  .breadcrumbitem a {\n    color: #555;\n    text-decoration: none;\n  }\n\n  .breadcrumbitem a:hover {\n    text-decoration: underline;\n  }\n\n  .breadcrumb_item--active span {\n    color: #111;\n    font-weight: 600;\n  }\n    \n.breadcrumb a:hover {\n    color: black;\n}\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "2788bc65-81dc-4cb5-b2a1-fbe53dc225f4": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "35a5fee6-efda-408d-b5d9-a6b5199c3ad6": {
+          "type": "sku",
+          "settings": {
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "f04702c8-9da5-49e0-ad6f-16f5349be4ef": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "8dd06782-3877-493c-be6e-241a0476638b": {
+          "type": "viewing",
+          "disabled": true,
+          "settings": {
+            "tm_min": 15,
+            "tm_max": 30,
+            "random_time": 10000
+          }
+        },
+        "92752956-00e3-4a7b-a6e5-a226b38fd241": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 100,
+            "show_inventory_quantity": true
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "6059abd7-f40c-4c49-8e0e-f4b38110099e": {
+          "type": "type",
+          "disabled": true,
+          "settings": {}
+        },
+        "6cd8fb2b-9bba-453d-b981-64ca4b0bab89": {
+          "type": "tag_name",
+          "disabled": true,
+          "settings": {}
+        },
+        "text_3tRUgG": {
+          "type": "text",
+          "settings": {
+            "text": "Need Help?<strong> demo@example.com</strong>",
+            "text_style": "body"
+          }
+        },
+        "icon_with_text_GUwwAL": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "none",
+            "heading_1": ".",
+            "icon_2": "none",
+            "heading_2": ".",
+            "icon_3": "none",
+            "heading_3": "."
+          }
+        },
+        "208f4b5f-4d7c-419b-842c-68d3820f4c1f": {
+          "type": "payment",
+          "settings": {
+            "payment_text": "Guarantee safe & secure checkout",
+            "payment_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "2788bc65-81dc-4cb5-b2a1-fbe53dc225f4",
+        "35a5fee6-efda-408d-b5d9-a6b5199c3ad6",
+        "title",
+        "f04702c8-9da5-49e0-ad6f-16f5349be4ef",
+        "price",
+        "description",
+        "8dd06782-3877-493c-be6e-241a0476638b",
+        "92752956-00e3-4a7b-a6e5-a226b38fd241",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "6059abd7-f40c-4c49-8e0e-f4b38110099e",
+        "6cd8fb2b-9bba-453d-b981-64ca4b0bab89",
+        "text_3tRUgG",
+        "icon_with_text_GUwwAL",
+        "208f4b5f-4d7c-419b-842c-68d3820f4c1f"
+      ],
+      "custom_css": [
+        ".product-single__description {display: none;}",
+        ".price__regular .price-item--regular {color: #0244a8; font-size: 31px;}",
+        ".icon-with-text--horizontal {width: 70%; column-gap: 0px; margin-top: 30px;}",
+        ".icon-with-text--horizontal .icon-with-text__item {flex-direction: column; width: 33%;}",
+        ".icon-with-text img {height: 85%; width: 85%;}",
+        ".icon-with-text--horizontal img + .h4 {display: none;}",
+        "a:hover {color: #ffda00; text-decoration: none;}",
+        ".price .price-item {display: inline-block; color: #f6ab4b;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "small",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": true,
+        "enable_wishlist_icon": false,
+        "enable_compare_icon": false,
+        "description_title": "",
+        "review_title": "Reviews",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "custom_tabs_6WTNG6": {
+      "type": "custom-tabs",
+      "blocks": {
+        "faq_wRYgpq": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "",
+            "faq_answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_wRYgpq"
+      ],
+      "custom_css": [
+        "li::marker {line-height: 3px; font-size: 14px;}",
+        "thead {text-align: left;}"
+      ],
+      "settings": {
+        "specifications": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "custom_css": [
+        ".price__regular .price-item--regular {color: #1b3055;}",
+        ".card__media .media img {height: 100%; object-fit: cover;}"
+      ],
+      "settings": {
+        "heading": "<strong>You May Also Like</strong>",
+        "heading_size": "h2",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "button_style": "button",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_hCwUd7",
+    "main",
+    "custom_tabs_6WTNG6",
+    "related-products"
+  ]
+}

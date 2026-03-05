@@ -1,0 +1,209 @@
+<section id="custom-product-tabs-{{ section.id }}" class="custom-product-tabs page-width">
+  <!-- Tabs Navigation -->
+  <div class="tabs-nav">
+    <button class="tab-link active" data-tab="description">Description</button>
+    <button class="tab-link" data-tab="specifications">Specifications</button>
+    <button class="tab-link" data-tab="reviews">Reviews</button>
+    <button class="tab-link" data-tab="faq">FAQ</button>
+  </div>
+ 
+  <!-- Tabs Content -->
+  <div class="tabs-content">
+    <!-- Description Tab -->
+    <div class="tab-panel active" id="description">
+      {{ product.description }}
+    </div>
+ 
+    <!-- Specifications Tab -->
+    <div class="tab-panel" id="specifications">
+      {% if section.settings.specifications != blank %}
+        {% assign specs = section.settings.specifications | split: '</p>' %}
+        <div class="spec-list">
+          {% for spec in specs %}
+            {% assign clean_spec = spec | strip_html | strip %}
+            {% if clean_spec contains ':' %}
+              {% assign parts = clean_spec | split: ':' %}
+              {% assign label = parts[0] | strip %}
+              {% assign value = parts[1] | strip %}
+ 
+              {% if value != blank %}
+                <div class="spec-item{% unless forloop.last %} has-border{% endunless %}">
+                  <div class="spec-label">{{ label }}</div>
+                  <div class="spec-value">{{ value }}</div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+ 
+    <!-- Reviews Tab (App Block) -->
+    <div class="tab-panel" id="reviews">
+      {% for block in section.blocks %}
+        {% if block.type == '@app' %}
+          {% render block %}
+        {% endif %}
+      {% endfor %}
+    </div>
+ 
+    <!-- FAQ Tab -->
+    <div class="tab-panel" id="faq">
+      <div class="faq-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'faq' %}
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>{{ block.settings.faq_question }}</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>{{ block.settings.faq_answer }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<style>
+  #custom-product-tabs-{{ section.id }} .tabs-nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  #custom-product-tabs-{{ section.id }} .tab-link {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background: #f9f9f9;
+  }
+  #custom-product-tabs-{{ section.id }} .tab-link.active {
+    background: #000;
+    color: #fff;
+  }
+  #custom-product-tabs-{{ section.id }} .tab-panel {
+    display: none;
+  }
+  #custom-product-tabs-{{ section.id }} .tab-panel.active {
+    display: block;
+  }
+ 
+  /* Specs */
+  #custom-product-tabs-{{ section.id }} .spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  #custom-product-tabs-{{ section.id }} .has-border {
+    border-bottom: 1px solid #ddd;
+  }
+  .spec-label {
+    font-weight: bold;
+  }
+ 
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+  }
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    background: #f2f2f2;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-icon {
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg); /* plus se cross ban jayega */
+  }
+  .faq-answer {
+    display: none;
+    padding: 10px;
+  }
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+  #custom-product-tabs-template--18670189248651__custom_tabs_9FJpPM .tab-link.active{
+        background: #dc5a0a !important;
+}
+.custom-product-tabs{
+    padding: 3rem;
+    border: 1px solid #f2f2f2;
+    margin: 3rem auto;
+}
+}
+</style>
+ 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Tab switching
+    document.querySelectorAll('#custom-product-tabs-{{ section.id }} .tab-link').forEach((btn) => {
+      btn.addEventListener('click', function () {
+        let parent = btn.closest('#custom-product-tabs-{{ section.id }}');
+        parent.querySelectorAll('.tab-link').forEach((b) => b.classList.remove('active'));
+        parent.querySelectorAll('.tab-panel').forEach((panel) => panel.classList.remove('active'));
+        btn.classList.add('active');
+        parent.querySelector('#' + btn.dataset.tab).classList.add('active');
+      });
+    });
+ 
+    // FAQ toggle
+    document.querySelectorAll('#custom-product-tabs-{{ section.id }} .faq-question').forEach((btn) => {
+      btn.addEventListener('click', function () {
+        let item = btn.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  });
+</script>
+ 
+{% schema %}
+{
+  "name": "Custom Product Tabs",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "specifications",
+      "label": "Specifications"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_question",
+          "label": "FAQ Question"
+        },
+        {
+          "type": "textarea",
+          "id": "faq_answer",
+          "label": "FAQ Answer"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "max_blocks": 15,
+  "presets": [
+    {
+      "name": "Custom Product Tabs"
+    }
+  ]
+}
+{% endschema %}
