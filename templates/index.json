@@ -91,35 +91,6 @@
         "padding_bottom": 0
       }
     },
-    "tets_7Cq4if": {
-      "type": "tets",
-      "blocks": {
-        "image_8Ep4Pp": {
-          "type": "image",
-          "settings": {
-            "subbanner": "shopify://shop_images/4_ac70af91-ea9d-4a4d-b6f7-2b1b69431c27.jpg",
-            "heading": "<p>From $240</p>",
-            "subheading": "<p>Disc Brake</p>",
-            "description": "<p>For Any Vehicle</p>",
-            "button_label": "Shop Now",
-            "button_link": "",
-            "button_style": "link",
-            "color_scheme": "accent-2"
-          }
-        }
-      },
-      "block_order": [
-        "image_8Ep4Pp"
-      ],
-      "name": "testing",
-      "settings": {
-        "addclass": "three-banner testkjhfksdhjkf",
-        "column_alignment": "left",
-        "content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "7102a354-77b3-460a-8438-43f6be6fdc83": {
       "type": "slideshow",
       "blocks": {
@@ -781,7 +752,6 @@
   "order": [
     "tab_collection_EJNUR7",
     "tets_amYfAJ",
-    "tets_7Cq4if",
     "7102a354-77b3-460a-8438-43f6be6fdc83",
     "collage_Peafcy",
     "collage_LCDTTN",
