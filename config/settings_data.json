@@ -224,8 +224,8 @@
     },
     "content_for_index": [],
     "blocks": {
-      "8669066016853369741": {
-        "type": "shopify://apps/hotjar-install/blocks/global/2903e4ea-7615-463e-8b60-582f487dac4f",
+      "15599951759576395258": {
+        "type": "shopify://apps/mida-replay-heatmaps/blocks/mida_recorder/e4c350c5-eabf-426d-8014-47ef50412bd0",
         "disabled": false,
         "settings": {}
       }
