@@ -78,7 +78,7 @@
             <div class="article-card__info caption-with-letter-spacing h5">
               {%- if show_date -%}
                 <span class="circle-divider">
-                  {% render icon-clock.svg %}
+                  {% render icon-clock %}
                   {{ article.published_at | time_tag: format: 'date' }}
                 </span>
               {%- endif -%}
@@ -169,3 +169,13 @@
     </div>
   </div>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render icon-clock.svg %}"
+  to: "{% render icon-clock %}"
+  position: 4748..4771
+{% endcomment %}

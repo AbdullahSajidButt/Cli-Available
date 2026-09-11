@@ -235,7 +235,7 @@
                     role="list"
                     aria-label="{{ 'general.slider.name' | t }}"
                   >
-                    {% paginate collection.products by {{ section.settings.products_to_show }} %}
+                    {% paginate collection.products by nil %}
                       {%- for product in collection.products limit: section.settings.products_to_show -%}
                         <li
                           id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -667,3 +667,14 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% paginate collection.products by {{ section.settings.products_to_show }}
+    %}"
+  to: "{% paginate collection.products by nil %}"
+  position: 11976..12017
+{% endcomment %}
